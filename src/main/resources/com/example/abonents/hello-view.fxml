@@ -15,14 +15,14 @@
             <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output"/>
             <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets"/>
             <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0" />
-            <TableView layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0">
+            <TableView layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0" fx:id="Table">
               <columns>
-                <TableColumn prefWidth="150.0" text="FIO" />
-                <TableColumn prefWidth="107.0" text="Street" />
-                  <TableColumn prefWidth="67.0" text="House" />
-                  <TableColumn prefWidth="107.0" text="Home Phone" />
-                  <TableColumn prefWidth="109.0" text="Work Phone" />
-                  <TableColumn prefWidth="112.0" text="Mobile Phone" />
+                <TableColumn prefWidth="150.0" text="FIO" fx:id="FIO" />
+                <TableColumn prefWidth="107.0" text="Street" fx:id="Street"/>
+                  <TableColumn prefWidth="67.0" text="House" fx:id="House"/>
+                  <TableColumn prefWidth="107.0" text="Home Phone" fx:id="HomePhone"/>
+                  <TableColumn prefWidth="109.0" text="Work Phone" fx:id="WorkPhone"/>
+                  <TableColumn prefWidth="112.0" text="Mobile Phone" fx:id="MobilePhone"/>
               </columns>
             </TableView>
          </children>

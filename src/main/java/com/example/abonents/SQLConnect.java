@@ -30,16 +30,16 @@ public class SQLConnect {
             String mobilePhone = resSet.getString("Phone_Number");
             String street = resSet.getString("Street");
             String house = resSet.getString("House");
+
+
+            System.out.println("Abonent FIO: " + name);
+            System.out.println("Street: " + street);
+            System.out.println("House: " + house);
+            System.out.println("Work phone: " + workPhone);
+            System.out.println("Home phone: " + homePhone);
+            System.out.println("Mobile phone: " + mobilePhone);
+            System.out.println();
         }
-    }
-
-    // --------Закрытие--------
-    public static void CloseDB() throws SQLException
-    {
-        conn.close();
-        resSet.close();
-
-        System.out.println("Database connection closed.");
     }
 
 }
