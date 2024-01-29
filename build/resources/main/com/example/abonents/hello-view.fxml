@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="407.0" prefWidth="726.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="768.0" prefWidth="1024.0">
+         <children>
+            <Button layoutX="14.0" layoutY="328.0" mnemonicParsing="false" fx:id="Search" text="Search"/>
+            <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output"/>
+            <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets"/>
+            <DatePicker layoutX="14.0" layoutY="14.0" />
+            <TableView layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0">
+              <columns>
+                <TableColumn prefWidth="150.0" text="FIO" />
+                <TableColumn prefWidth="107.0" text="Street" />
+                  <TableColumn prefWidth="67.0" text="House" />
+                  <TableColumn prefWidth="107.0" text="Home Phone" />
+                  <TableColumn prefWidth="109.0" text="Work Phone" />
+                  <TableColumn prefWidth="112.0" text="Mobile Phone" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
