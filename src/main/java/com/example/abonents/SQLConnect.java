@@ -1,5 +1,6 @@
 package com.example.abonents;
 import com.example.abonents.classes.Abonents;
+import com.example.abonents.classes.Phones;
 import com.example.abonents.classes.Streets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,7 +46,6 @@ public class SQLConnect {
     }
 
     public static ObservableList<Streets> getStreets() throws SQLException, ClassNotFoundException {
-        Connection conn = Conn();
         ObservableList<Streets> list = FXCollections.observableArrayList();
 
         int count = 0;
@@ -61,6 +61,66 @@ public class SQLConnect {
             int AbId = resSet.getInt("StreetsID");
             if (AbId == StId) count++;
             list.add(new Streets(count,street));
+        }
+
+        return list;
+    }
+
+    public static ObservableList<Phones> getWPhone() throws SQLException, ClassNotFoundException {
+        ObservableList<Phones> list = FXCollections.observableArrayList();
+
+        statmt = conn.createStatement();
+        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+                "PhoneNumber.Work_Number FROM Abonent " +
+                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+
+        while (resSet.next()) {
+
+            String name = resSet.getString("LastName") + " " + resSet.getString("FirstName")
+                    + " " + resSet.getString("MiddleName");
+
+            String phone = resSet.getString("Work_Number");
+            list.add(new Phones(name,phone));
+        }
+
+        return list;
+    }
+
+    public static ObservableList<Phones> getHPhone() throws SQLException, ClassNotFoundException {
+        ObservableList<Phones> list = FXCollections.observableArrayList();
+
+        statmt = conn.createStatement();
+        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+                "PhoneNumber.Home_Number FROM Abonent " +
+                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+
+        while (resSet.next()) {
+
+            String name = resSet.getString("LastName") + " " + resSet.getString("FirstName")
+                    + " " + resSet.getString("MiddleName");
+
+            String phone = resSet.getString("Home_Number");
+            list.add(new Phones(name,phone));
+        }
+
+        return list;
+    }
+
+    public static ObservableList<Phones> getMPhone() throws SQLException, ClassNotFoundException {
+        ObservableList<Phones> list = FXCollections.observableArrayList();
+
+        statmt = conn.createStatement();
+        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+                "PhoneNumber.Phone_Number FROM Abonent " +
+                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+
+        while (resSet.next()) {
+
+            String name = resSet.getString("LastName") + " " + resSet.getString("FirstName")
+                    + " " + resSet.getString("MiddleName");
+
+            String phone = resSet.getString("Phone_Number");
+            list.add(new Phones(name,phone));
         }
 
         return list;

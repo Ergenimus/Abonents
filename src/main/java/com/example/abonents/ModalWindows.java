@@ -17,8 +17,6 @@ public class ModalWindows {
         Scene scene = new Scene(fxmlLoader.load());
         stage.initModality(Modality.APPLICATION_MODAL);
 
-        Pane pane = new Pane();
-
         stage.setScene(scene);
         stage.setTitle("Streets");
         stage.showAndWait();
