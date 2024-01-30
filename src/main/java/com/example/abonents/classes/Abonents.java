@@ -1,4 +1,4 @@
-package com.example.abonents;
+package com.example.abonents.classes;
 
 public class Abonents {
 

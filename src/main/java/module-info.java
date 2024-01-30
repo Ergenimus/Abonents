@@ -6,4 +6,8 @@ module com.example.abonents {
 
     opens com.example.abonents to javafx.fxml;
     exports com.example.abonents;
+    exports com.example.abonents.classes;
+    opens com.example.abonents.classes to javafx.fxml;
+    exports com.example.abonents.controllers;
+    opens com.example.abonents.controllers to javafx.fxml;
 }

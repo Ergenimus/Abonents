@@ -4,25 +4,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="407.0" prefWidth="726.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.HelloController">
+<VBox prefHeight="407.0" prefWidth="726.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.controllers.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <Button layoutX="14.0" layoutY="328.0" mnemonicParsing="false" fx:id="Search" text="Search" onAction="#SearchByPhone"/>
-            <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output" onAction="#onClickMethod"/>
-            <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets" onAction="#StreetsWindow"/>
-            <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0"/>
-            <TableView layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0" fx:id="Table">
+            <Button fx:id="Search" layoutX="14.0" layoutY="328.0" mnemonicParsing="false" onAction="#SearchByPhone" text="Search" />
+            <Button fx:id="CSVOutput" layoutX="149.0" layoutY="328.0" mnemonicParsing="false" onAction="#onClickMethod" text="CSV Output" />
+            <Button fx:id="Streets" layoutX="82.0" layoutY="328.0" mnemonicParsing="false" onAction="#StreetsWindow" text="Streets" />
+            <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0" />
+            <TableView fx:id="Table" layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0">
               <columns>
-                <TableColumn prefWidth="150.0" text="FIO" fx:id="FIO" />
-                <TableColumn prefWidth="107.0" text="Street" fx:id="Street"/>
-                  <TableColumn prefWidth="67.0" text="House" fx:id="House"/>
-                  <TableColumn prefWidth="107.0" text="Home Phone" fx:id="HomePhone"/>
-                  <TableColumn prefWidth="109.0" text="Work Phone" fx:id="WorkPhone"/>
-                  <TableColumn prefWidth="112.0" text="Mobile Phone" fx:id="MobilePhone"/>
+                <TableColumn fx:id="FIO" prefWidth="150.0" text="Abonent" />
+                <TableColumn fx:id="Street" prefWidth="107.0" text="Street" />
+                  <TableColumn fx:id="House" prefWidth="67.0" text="House" />
+                  <TableColumn fx:id="HomePhone" prefWidth="107.0" text="Home Phone" />
+                  <TableColumn fx:id="WorkPhone" prefWidth="109.0" text="Work Phone" />
+                  <TableColumn fx:id="MobilePhone" prefWidth="112.0" text="Mobile Phone" />
               </columns>
             </TableView>
          </children>

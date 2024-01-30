@@ -1,13 +1,13 @@
-package com.example.abonents;
+package com.example.abonents.controllers;
 
+import com.example.abonents.ModalWindows;
+import com.example.abonents.SQLConnect;
+import com.example.abonents.classes.Abonents;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 
 import java.io.*;
@@ -85,11 +85,11 @@ public class HelloController {
         file.close();
     }
     @FXML
-    public void StreetsWindow(ActionEvent event) throws IOException {
-
+    public void StreetsWindow(ActionEvent actionEvent) throws IOException {
+        ModalWindows.StreetsWindow();
     }
-
-    public void SearchByPhone(ActionEvent event) {
-
+    @FXML
+    public void SearchByPhone(ActionEvent actionEvent) throws IOException {
+        ModalWindows.SearchWindow();
     }
 }

@@ -9,8 +9,8 @@
       <TextField layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="271.0" />
       <TableView layoutX="15.0" layoutY="185.0" prefHeight="200.0" prefWidth="271.0">
         <columns>
-          <TableColumn fx:id="Abonent" prefWidth="168.0" text="Abonent" />
-          <TableColumn fx:id="Phone" prefWidth="101.0" text="Phone" />
+          <TableColumn prefWidth="168.0" text="Abonent" />
+          <TableColumn prefWidth="101.0" text="Phone" />
         </columns>
       </TableView>
       <RadioButton layoutX="34.0" layoutY="81.0" mnemonicParsing="false" text="Work" />

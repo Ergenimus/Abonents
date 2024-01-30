@@ -1,4 +1,6 @@
 package com.example.abonents;
+import com.example.abonents.classes.Abonents;
+import com.example.abonents.classes.Streets;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -41,6 +43,29 @@ public class SQLConnect {
 
         return list;
     }
+
+    public static ObservableList<Streets> getStreets() throws SQLException, ClassNotFoundException {
+        Connection conn = Conn();
+        ObservableList<Streets> list = FXCollections.observableArrayList();
+
+        int count = 0;
+
+        statmt = conn.createStatement();
+        resSet = statmt.executeQuery("SELECT Streets.Street, Street.Streets_ID, Abonent.Streets_ID " +
+                "FROM Streets INNER JOIN Abonent WHERE Abonent.Streets_ID = Streets.Streets_ID");
+
+        while (resSet.next()) {
+
+            String street = resSet.getString("Street");
+            int StId = resSet.getInt("Streets.Streets_ID");
+            int AbId = resSet.getInt("Abonent.Streets_ID");
+            if (AbId == StId) count++;
+            list.add(new Streets(count,street));
+        }
+
+        return list;
+    }
+
 
 
     /*public static void ReadDB() throws SQLException
