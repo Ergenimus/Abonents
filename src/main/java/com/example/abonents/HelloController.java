@@ -1,18 +1,21 @@
 package com.example.abonents;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
+
+import java.io.*;
 import java.sql.*;
-import java.time.LocalDate;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 
 public class HelloController {
+    private static final char DELIMITER ='\n';
     @FXML
     public Button Streets;
     @FXML
@@ -37,13 +40,11 @@ public class HelloController {
     public TableView<Abonents> Table;
 
     ObservableList<Abonents> listA;
-
-    int index = -1;
-    Connection conn = null;
-    ResultSet rs = null;
-    Statement statmt = null;
-
+    @FXML
     public void initialize() throws SQLException, ClassNotFoundException {
+
+        Date dateStamp = new Date(System.currentTimeMillis());
+
         FIO.setCellValueFactory(new PropertyValueFactory<Abonents,String>("fio"));
         House.setCellValueFactory(new PropertyValueFactory<Abonents,String>("house"));
         Street.setCellValueFactory(new PropertyValueFactory<Abonents,String>("street"));
@@ -53,6 +54,34 @@ public class HelloController {
 
         listA = SQLConnect.getAbonents();
         Table.setItems(listA);
+
+        CurDate.setValue(dateStamp.toLocalDate());
+    }
+    @FXML
+    public void onClickMethod(ActionEvent actionEvent) throws IOException {
+        Date date = new Date(System.currentTimeMillis());
+        DateFormat dateFormat = new SimpleDateFormat("HH-mm-ss", Locale.ENGLISH);
+
+        FileWriter file = new FileWriter("Report_" + date + "_" + dateFormat.format(date) + ".csv");
+        for (Abonents ab : listA) {
+            file.append(ab.getFio());
+            file.append(DELIMITER);
+            file.append(ab.getStreet());
+            file.append(DELIMITER);
+            file.append(ab.getHouse());
+            file.append(DELIMITER);
+            file.append(ab.getWPhone());
+            file.append(DELIMITER);
+            file.append(ab.getHPhone());
+            file.append(DELIMITER);
+            file.append(ab.getMPhone());
+        }
+        System.out.println("DB Data exported successfully!");
+        file.close();
+    }
+    @FXML
+    public void StreetsWindow(ActionEvent event) throws IOException {
+
     }
 
 }

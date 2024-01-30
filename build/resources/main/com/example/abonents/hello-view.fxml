@@ -12,9 +12,9 @@
       <AnchorPane prefHeight="768.0" prefWidth="1024.0">
          <children>
             <Button layoutX="14.0" layoutY="328.0" mnemonicParsing="false" fx:id="Search" text="Search"/>
-            <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output"/>
-            <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets"/>
-            <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0" />
+            <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output" onAction="#onClickMethod"/>
+            <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets" onAction="#StreetsWindow"/>
+            <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0"/>
             <TableView layoutX="14.0" layoutY="48.0" prefHeight="269.0" prefWidth="653.0" fx:id="Table">
               <columns>
                 <TableColumn prefWidth="150.0" text="FIO" fx:id="FIO" />
