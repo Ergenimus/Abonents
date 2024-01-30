@@ -51,14 +51,14 @@ public class SQLConnect {
         int count = 0;
 
         statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT Streets.Street, Street.Streets_ID, Abonent.Streets_ID " +
-                "FROM Streets INNER JOIN Abonent WHERE Abonent.Streets_ID = Streets.Streets_ID");
+        resSet = statmt.executeQuery("SELECT Streets.Street, Streets.Streets_ID, Abonent.StreetsID " +
+                "FROM Streets INNER JOIN Abonent WHERE Abonent.StreetsID = Streets.Streets_ID");
 
         while (resSet.next()) {
 
             String street = resSet.getString("Street");
-            int StId = resSet.getInt("Streets.Streets_ID");
-            int AbId = resSet.getInt("Abonent.Streets_ID");
+            int StId = resSet.getInt("Streets_ID");
+            int AbId = resSet.getInt("StreetsID");
             if (AbId == StId) count++;
             list.add(new Streets(count,street));
         }
