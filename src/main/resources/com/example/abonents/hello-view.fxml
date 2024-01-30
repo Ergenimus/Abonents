@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <Button layoutX="14.0" layoutY="328.0" mnemonicParsing="false" fx:id="Search" text="Search"/>
+            <Button layoutX="14.0" layoutY="328.0" mnemonicParsing="false" fx:id="Search" text="Search" onAction="#SearchByPhone"/>
             <Button layoutX="149.0" layoutY="328.0" mnemonicParsing="false" fx:id="CSVOutput" text="CSV Output" onAction="#onClickMethod"/>
             <Button layoutX="82.0" layoutY="328.0" mnemonicParsing="false" fx:id="Streets" text="Streets" onAction="#StreetsWindow"/>
             <DatePicker fx:id="CurDate" layoutX="14.0" layoutY="14.0"/>

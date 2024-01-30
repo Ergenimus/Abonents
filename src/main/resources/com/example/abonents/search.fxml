@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.SearchController">
+   <children>
+      <TextField layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="271.0" />
+      <TableView layoutX="15.0" layoutY="185.0" prefHeight="200.0" prefWidth="271.0">
+        <columns>
+          <TableColumn prefWidth="168.0" text="Abonent" />
+          <TableColumn prefWidth="101.0" text="Phone" />
+        </columns>
+      </TableView>
+      <RadioButton layoutX="34.0" layoutY="81.0" mnemonicParsing="false" text="Work" />
+      <RadioButton layoutX="125.0" layoutY="81.0" mnemonicParsing="false" text="Home" />
+      <RadioButton layoutX="213.0" layoutY="81.0" mnemonicParsing="false" text="Mobile" />
+      <Button layoutX="124.0" layoutY="139.0" mnemonicParsing="false" text="Search" />
+      <Label layoutX="95.0" layoutY="14.0" text="Input phone number" />
+   </children>
+</AnchorPane>

@@ -3,8 +3,11 @@ package com.example.abonents;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 
 import java.io.*;
@@ -15,7 +18,8 @@ import java.util.Locale;
 
 
 public class HelloController {
-    private static final char DELIMITER ='\n';
+    private static final char DELIMITER =',';
+    private static final char SEPARATOR ='\n';
     @FXML
     public Button Streets;
     @FXML
@@ -75,6 +79,7 @@ public class HelloController {
             file.append(ab.getHPhone());
             file.append(DELIMITER);
             file.append(ab.getMPhone());
+            file.append(SEPARATOR);
         }
         System.out.println("DB Data exported successfully!");
         file.close();
@@ -84,4 +89,7 @@ public class HelloController {
 
     }
 
+    public void SearchByPhone(ActionEvent event) {
+
+    }
 }
