@@ -50,21 +50,18 @@ public class SearchController {
     public void SearchByPhone(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         if (WorkB.isSelected()){
-            listP = SQLConnect.getWPhone();
+            listP = SQLConnect.getWPhone(searchF.getText());
         } else if (HomeB.isSelected()) {
-            listP = SQLConnect.getHPhone();
+            listP = SQLConnect.getHPhone(searchF.getText());
         } else if (MobileB.isSelected()) {
-            listP = SQLConnect.getMPhone();
+            listP = SQLConnect.getMPhone(searchF.getText());
         }
 
-        String checker = searchF.getText();
-
-        if (!Objects.equals(Phone.getText(), checker)) {
+        if (listP == null || listP.isEmpty()) {
             NoLabel.setVisible(true);
-            phone.setItems(listP);
-        } else {
-            phone.getItems().add((Phones) listP);
         }
+
+        phone.setItems(listP);
     }
 
 }

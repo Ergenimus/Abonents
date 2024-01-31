@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="260.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.controllers.SearchController">
+<AnchorPane prefHeight="320.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.controllers.SearchController">
    <children>
       <TilePane fx:id="pane" layoutX="60.0" layoutY="73.0" prefHeight="34.0" prefWidth="182.0" />
       <TextField fx:id="searchF" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="271.0" />
-      <TableView fx:id="phone" layoutX="15.0" layoutY="185.0" prefHeight="58.0" prefWidth="271.0">
+      <TableView fx:id="phone" layoutX="15.0" layoutY="185.0" prefHeight="118.0" prefWidth="271.0">
         <columns>
           <TableColumn fx:id="Abonent" prefWidth="140.0" text="Abonent" />
           <TableColumn fx:id="Phone" prefWidth="129.0" text="Phone" />

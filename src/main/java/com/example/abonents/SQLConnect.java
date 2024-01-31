@@ -66,13 +66,15 @@ public class SQLConnect {
         return list;
     }
 
-    public static ObservableList<Phones> getWPhone() throws SQLException, ClassNotFoundException {
+    public static ObservableList<Phones> getWPhone(String text) throws SQLException {
         ObservableList<Phones> list = FXCollections.observableArrayList();
 
-        statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
-                "PhoneNumber.Work_Number FROM Abonent " +
-                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+        PreparedStatement preparedStatement = conn.prepareStatement("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+                        "PhoneNumber.Work_Number FROM Abonent " +
+                        "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID " +
+                        "WHERE PhoneNumber.Work_Number like '%' || ? || '%'");
+        preparedStatement.setString(1, text);
+        resSet = preparedStatement.executeQuery();
 
         while (resSet.next()) {
 
@@ -86,14 +88,15 @@ public class SQLConnect {
         return list;
     }
 
-    public static ObservableList<Phones> getHPhone() throws SQLException, ClassNotFoundException {
+    public static ObservableList<Phones> getHPhone(String text) throws SQLException {
         ObservableList<Phones> list = FXCollections.observableArrayList();
 
-        statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+        PreparedStatement preparedStatement = conn.prepareStatement("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
                 "PhoneNumber.Home_Number FROM Abonent " +
-                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
-
+                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID " +
+                "WHERE PhoneNumber.Home_Number like '%' || ? || '%'");
+        preparedStatement.setString(1, text);
+        resSet = preparedStatement.executeQuery();
         while (resSet.next()) {
 
             String name = resSet.getString("LastName") + " " + resSet.getString("FirstName")
@@ -106,13 +109,15 @@ public class SQLConnect {
         return list;
     }
 
-    public static ObservableList<Phones> getMPhone() throws SQLException, ClassNotFoundException {
+    public static ObservableList<Phones> getMPhone(String text) throws SQLException {
         ObservableList<Phones> list = FXCollections.observableArrayList();
 
-        statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
+        PreparedStatement preparedStatement = conn.prepareStatement("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
                 "PhoneNumber.Phone_Number FROM Abonent " +
-                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID " +
+                "WHERE PhoneNumber.Phone_Number like '%' || ? || '%'");
+        preparedStatement.setString(1, text);
+        resSet = preparedStatement.executeQuery();
 
         while (resSet.next()) {
 
