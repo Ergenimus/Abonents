@@ -61,8 +61,9 @@ public class SearchController {
 
         if (!Objects.equals(Phone.getText(), checker)) {
             NoLabel.setVisible(true);
-        } else {
             phone.setItems(listP);
+        } else {
+            phone.getItems().add((Phones) listP);
         }
     }
 
