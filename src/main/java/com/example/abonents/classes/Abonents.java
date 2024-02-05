@@ -61,4 +61,13 @@ public class Abonents {
         this.mobilePhone = mobilePhone;
     }
 
+    @Override
+    public String toString(){
+        char DELIMETER = ',';
+        char SEPARATOR = '\n';
+
+        return getFio() + DELIMETER + getStreet() + DELIMETER + getHouse() + DELIMETER + getWPhone() + DELIMETER
+                + getHPhone() + DELIMETER + getMPhone() + SEPARATOR;
+    }
+
 }

@@ -18,8 +18,6 @@ import java.util.Locale;
 
 
 public class HelloController {
-    private static final char DELIMITER =',';
-    private static final char SEPARATOR ='\n';
     @FXML
     public Button Streets;
     @FXML
@@ -68,18 +66,7 @@ public class HelloController {
 
         FileWriter file = new FileWriter("Report_" + date + "_" + dateFormat.format(date) + ".csv");
         for (Abonents ab : listA) {
-            file.append(ab.getFio());
-            file.append(DELIMITER);
-            file.append(ab.getStreet());
-            file.append(DELIMITER);
-            file.append(ab.getHouse());
-            file.append(DELIMITER);
-            file.append(ab.getWPhone());
-            file.append(DELIMITER);
-            file.append(ab.getHPhone());
-            file.append(DELIMITER);
-            file.append(ab.getMPhone());
-            file.append(SEPARATOR);
+            file.append(ab.toString());
         }
         System.out.println("DB Data exported successfully!");
         file.close();

@@ -28,11 +28,14 @@ public class SQLConnect {
 
             statmt = conn.createStatement();
             resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
-                        "Address.Street, Address.House, PhoneNumber.Home_Number, PhoneNumber.Work_Number, " +
-                        "PhoneNumber.Phone_Number FROM Abonent INNER JOIN Address ON Address.ID_Address = Abonent.Address_ID " +
-                        "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
+                        "Streets.Street, Address.House, PhoneNumber.Home_Number, PhoneNumber.Work_Number, " +
+                        "PhoneNumber.Phone_Number FROM Abonent " +
+                    "INNER JOIN Address ON Address.ID_Address = Abonent.Address_ID " +
+                        "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID " +
+                    "INNER JOIN Streets ON Streets.Streets_ID = Abonent.StreetsID ");
             while (resSet.next()) {
-                String name = resSet.getString("LastName") + " " + resSet.getString("FirstName") + " " + resSet.getString("MiddleName");
+                String name = resSet.getString("LastName") + " " +
+                        resSet.getString("FirstName") + " " + resSet.getString("MiddleName");
                 String workPhone = resSet.getString("Work_Number");
                 String homePhone = resSet.getString("Home_Number");
                 String mobilePhone = resSet.getString("Phone_Number");
@@ -130,17 +133,4 @@ public class SQLConnect {
 
         return list;
     }
-
-
-
-    /*public static void ReadDB() throws SQLException
-    {
-        statmt = conn.createStatement();
-        resSet = statmt.executeQuery("SELECT Abonent.LastName, Abonent.FirstName, Abonent.MiddleName, " +
-                "Address.Street, Address.House, PhoneNumber.Home_Number, PhoneNumber.Work_Number, " +
-                "PhoneNumber.Phone_Number FROM Abonent INNER JOIN Address ON Address.ID_Address = Abonent.Address_ID " +
-                "INNER JOIN PhoneNumber ON PhoneNumber.Phone_ID = Abonent.PhoneNumber_ID");
-
-
-    }*/
 }
