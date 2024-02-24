@@ -4,25 +4,26 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="320.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.controllers.SearchController">
-   <children>
-      <TilePane fx:id="pane" layoutX="60.0" layoutY="73.0" prefHeight="34.0" prefWidth="182.0" />
-      <TextField fx:id="searchF" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="271.0" />
-      <TableView fx:id="phone" layoutX="15.0" layoutY="185.0" prefHeight="118.0" prefWidth="271.0">
-        <columns>
-          <TableColumn fx:id="Abonent" prefWidth="140.0" text="Abonent" />
-          <TableColumn fx:id="Phone" prefWidth="129.0" text="Phone" />
-        </columns>
-      </TableView>
-      <RadioButton fx:id="WorkB" layoutX="63.0" layoutY="81.0" mnemonicParsing="false" text="Work" />
-      <RadioButton fx:id="HomeB" layoutX="119.0" layoutY="81.0" mnemonicParsing="false" text="Home" />
-      <RadioButton fx:id="MobileB" layoutX="180.0" layoutY="81.0" mnemonicParsing="false" text="Mobile" />
-      <Button fx:id="SearchB" layoutX="125.0" layoutY="118.0" mnemonicParsing="false" onAction="#SearchByPhone" text="Search" />
-      <Label layoutX="95.0" layoutY="14.0" text="Input phone number" />
-      <Label fx:id="NoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="155.0" prefHeight="17.0" prefWidth="271.0" text="There are no abonents who meet the search criteria" visible="false">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane prefHeight="320.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.abonents.controllers.SearchController">
+    <TilePane fx:id="pane" layoutX="60.0" layoutY="73.0" prefHeight="34.0" prefWidth="182.0"/>
+    <TextField fx:id="searchF" layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="271.0"/>
+    <TableView fx:id="phone" layoutX="15.0" layoutY="185.0" prefHeight="118.0" prefWidth="271.0">
+      <columns>
+          <TableColumn fx:id="Abonent" prefWidth="140.0" text="Abonent"/>
+          <TableColumn fx:id="Phone" prefWidth="129.0" text="Phone"/>
+      </columns>
+    </TableView>
+    <RadioButton fx:id="WorkB" layoutX="63.0" layoutY="81.0" mnemonicParsing="false" text="Work"/>
+    <RadioButton fx:id="HomeB" layoutX="119.0" layoutY="81.0" mnemonicParsing="false" text="Home"/>
+    <RadioButton fx:id="MobileB" layoutX="180.0" layoutY="81.0" mnemonicParsing="false" text="Mobile"/>
+    <Button fx:id="SearchB" layoutX="125.0" layoutY="118.0" mnemonicParsing="false" onAction="#SearchByPhone"
+            text="Search"/>
+    <Label layoutX="95.0" layoutY="14.0" text="Input phone number"/>
+    <Label fx:id="NoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="155.0" prefHeight="17.0"
+           prefWidth="271.0" text="There are no abonents who meet the search criteria" visible="false">
+        <font>
+          <Font size="11.0"/>
+        </font>
+    </Label>
 </AnchorPane>

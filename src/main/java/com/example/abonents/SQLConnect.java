@@ -48,7 +48,7 @@ public class SQLConnect {
         return list;
     }
 
-    public static ObservableList<Streets> getStreets() throws SQLException, ClassNotFoundException {
+    public static ObservableList<Streets> getStreets() throws SQLException {
         ObservableList<Streets> list = FXCollections.observableArrayList();
 
         int count = 0;

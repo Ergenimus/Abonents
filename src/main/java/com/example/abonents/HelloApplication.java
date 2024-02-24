@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 
 public class HelloApplication extends Application {
@@ -19,7 +18,7 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) {
         launch();
     }
 }

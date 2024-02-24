@@ -4,14 +4,12 @@ package com.example.abonents.controllers;
 import com.example.abonents.SQLConnect;
 import com.example.abonents.classes.Phones;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.TilePane;
 
 import java.sql.SQLException;
-import java.util.Objects;
 
 public class SearchController {
 
@@ -29,7 +27,7 @@ public class SearchController {
     ObservableList<Phones> listP;
 
     @FXML
-    public void initialize() throws SQLException, ClassNotFoundException {
+    public void initialize() {
 
         ToggleGroup radioGroup = new ToggleGroup();
 
@@ -42,12 +40,12 @@ public class SearchController {
         pane.getChildren().add(HomeB);
         pane.getChildren().add(MobileB);
 
-        Abonent.setCellValueFactory(new PropertyValueFactory<Phones,String>("name"));
-        Phone.setCellValueFactory(new PropertyValueFactory<Phones,String>("phone"));
+        Abonent.setCellValueFactory(new PropertyValueFactory<>("name"));
+        Phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
     }
 
-    public void SearchByPhone(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+    public void SearchByPhone() throws SQLException {
 
         if (WorkB.isSelected()){
             listP = SQLConnect.getWPhone(searchF.getText());

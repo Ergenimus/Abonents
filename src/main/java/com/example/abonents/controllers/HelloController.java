@@ -4,14 +4,17 @@ import com.example.abonents.ModalWindows;
 import com.example.abonents.SQLConnect;
 import com.example.abonents.classes.Abonents;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
-import java.io.*;
-import java.sql.*;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -47,12 +50,12 @@ public class HelloController {
 
         Date dateStamp = new Date(System.currentTimeMillis());
 
-        FIO.setCellValueFactory(new PropertyValueFactory<Abonents,String>("fio"));
-        House.setCellValueFactory(new PropertyValueFactory<Abonents,String>("house"));
-        Street.setCellValueFactory(new PropertyValueFactory<Abonents,String>("street"));
-        WorkPhone.setCellValueFactory(new PropertyValueFactory<Abonents,String>("WPhone"));
-        HomePhone.setCellValueFactory(new PropertyValueFactory<Abonents,String>("HPhone"));
-        MobilePhone.setCellValueFactory(new PropertyValueFactory<Abonents,String>("MPhone"));
+        FIO.setCellValueFactory(new PropertyValueFactory<>("fio"));
+        House.setCellValueFactory(new PropertyValueFactory<>("house"));
+        Street.setCellValueFactory(new PropertyValueFactory<>("street"));
+        WorkPhone.setCellValueFactory(new PropertyValueFactory<>("WPhone"));
+        HomePhone.setCellValueFactory(new PropertyValueFactory<>("HPhone"));
+        MobilePhone.setCellValueFactory(new PropertyValueFactory<>("MPhone"));
 
         listA = SQLConnect.getAbonents();
         Table.setItems(listA);
@@ -60,7 +63,7 @@ public class HelloController {
         CurDate.setValue(dateStamp.toLocalDate());
     }
     @FXML
-    public void onClickMethod(ActionEvent actionEvent) throws IOException {
+    public void onClickMethod() throws IOException {
         Date date = new Date(System.currentTimeMillis());
         DateFormat dateFormat = new SimpleDateFormat("HH-mm-ss", Locale.ENGLISH);
 
@@ -72,11 +75,11 @@ public class HelloController {
         file.close();
     }
     @FXML
-    public void StreetsWindow(ActionEvent actionEvent) throws IOException {
+    public void StreetsWindow() throws IOException {
         ModalWindows.StreetsWindow();
     }
     @FXML
-    public void SearchByPhone(ActionEvent actionEvent) throws IOException {
+    public void SearchByPhone() throws IOException {
         ModalWindows.SearchWindow();
     }
 }

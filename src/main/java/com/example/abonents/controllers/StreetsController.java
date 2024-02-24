@@ -21,10 +21,10 @@ public class StreetsController {
     ObservableList<Streets> listS;
 
     @FXML
-    public void initialize() throws SQLException, ClassNotFoundException {
+    public void initialize() throws SQLException {
 
-        Abonents.setCellValueFactory(new PropertyValueFactory<Streets,Integer>("count"));
-        Street.setCellValueFactory(new PropertyValueFactory<Streets,String>("street"));
+        Abonents.setCellValueFactory(new PropertyValueFactory<>("count"));
+        Street.setCellValueFactory(new PropertyValueFactory<>("street"));
 
         listS = SQLConnect.getStreets();
 
